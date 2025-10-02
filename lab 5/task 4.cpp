@@ -6,19 +6,15 @@ int N;
 int solutionCount = 0;
 char board[MAX][MAX];
 
-// Check if it's safe to place a queen at (row, col)
 bool isSafe(int row, int col) {
-    // Check column
     for (int i = 0; i < row; i++)
         if (board[i][col] == 'Q')
             return false;
 
-    // Check upper-left diagonal
     for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--)
         if (board[i][j] == 'Q')
             return false;
 
-    // Check upper-right diagonal
     for (int i = row - 1, j = col + 1; i >= 0 && j < N; i--, j++)
         if (board[i][j] == 'Q')
             return false;
@@ -26,7 +22,6 @@ bool isSafe(int row, int col) {
     return true;
 }
 
-// Print the board
 void printBoard() {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++)
@@ -36,7 +31,6 @@ void printBoard() {
     cout << endl;
 }
 
-// Recursive backtracking
 void solveNQueens(int row, bool printFirst) {
     if (row == N) {
         solutionCount++;
