@@ -65,3 +65,10 @@ int main() {
         cout << "No path exists!\n";
     return 0;
 }
+ /* Q3b)
+If multiple paths exist…
+Backtracking explores all possible paths recursively, but the first successful path depends on the order of moves you define.
+For example:
+If your move order is Down → Right → Up → Left, it will always go down first whenever possible.
+If you change it to Right → Down → Left → Up, it will prioritize rightward moves first.
+Thus, if multiple valid paths exist, the algorithm follows the first successful one based on the movement priority. */
